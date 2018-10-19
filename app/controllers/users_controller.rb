@@ -14,6 +14,19 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(users_params)
+      flash[:success] = "Updated successfully"
+      redirect_to articles_path
+    else
+    end
+  end
+  
   private
   def users_params
     params.require(:user).permit(:username, :email, :password)
