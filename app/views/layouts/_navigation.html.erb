@@ -1,7 +1,12 @@
-<nav class="card" bg-primary text-black> 
+<nav class="card bg-primary text-black"> 
   <a class="navbar-brand" href="#">Top Blog</a>
   <%= link_to "Top Blog", root_path, class: "navbar-brand", id: "logo" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -12,13 +17,28 @@
       </li>
       <li class="nav-link">
         <%= link_to "Articles", articles_path %>
+        <%= link_to "Users", users_path %>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+        <a class="nav-link dropdown-toggle" href="#"
+                                            id="navbarDropdown"
+                                            role="button"
+                                            data-toggle="dropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="false">
+          Your Profile
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "New article", new_article_path, class: "dropdown-item" %>
+          <% if logged_in? %>
+            <%= link_to "New article", new_article_path, class: "dropdown-item" %>
+            <%= link_to "Edit your profile", edit_user_path(current_user) %>
+            <%= link_to "View your profile", user_path(current_user) %>
+            <%= link_to "Log out", logout_path, method: :delete %>
+          <% else %>
+            <%= link_to "Login", login_path %>
+            <%= link_to "Log out", signup_path %>
+          <% end %>
+
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
