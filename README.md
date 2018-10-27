@@ -1,14 +1,12 @@
-# 
 
-
-##Gems used
+##Gems used##
 **Pagination**
 will_paginate and bootstrap-will_paginate
 
 Layout style
-Bootstrap 4.1 (gem which bootstrap)
+Bootstrap 3.3.7 (gem which bootstrap)
 
-Authentication
+Simple Authentication
 From scratch
 
 
