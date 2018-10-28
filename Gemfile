@@ -20,11 +20,15 @@ gem 'bootstrap', '~> 4.1.3'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
+  gem 'rails-controller-testing', '0.1.1'
+  gem 'minitest-reporters',       '1.1.9'
+  gem 'guard',                    '2.13.0'
+  gem 'guard-minitest',           '2.4.4'
+  gem "minitest",                 '5.10.1'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
 end
 
