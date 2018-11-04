@@ -14,7 +14,7 @@
           </div>
         </div>
         
-        <% if article.categories.any %>
+        <% if article.categories.any?   %>
           <p>Categories: <%= render article.categories %></p>
         <% end %>
         
